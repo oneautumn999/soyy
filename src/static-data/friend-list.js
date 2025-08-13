@@ -6,29 +6,29 @@ import f5 from "../assets/Images/ad5.jpeg";
 
 const ListFriend = [
   {
-    Nama: "Irfan Fauzan",
+    Nama: "CARA",
     Image: f1,
-    TheySaid: "He’s always there when you need him — generous and never gatekeeps knowledge.",
+    TheySaid: "Always has your back in every obby — total team player and fun to hang with!",
   },
   {
-    Nama: "Daffa Fatahillah",
+    Nama: "SHERINE",
     Image: f2,
-    TheySaid: "Working with him feels effortless — calm under pressure and always on point.",
+    TheySaid: "Knows all the best games and never keeps secrets — shares tips like a pro.",
   },
   {
-    Nama: "Rakhmad Ramadhan",
+    Nama: "LOUIS",
     Image: f3,
-    TheySaid: "Not just a great teammate, but someone you can rely on as a friend too.",
+    TheySaid: "Fast, smart, and always ready to squad up — never lets the team down.",
   },
   {
-    Nama: "Made Bagas Bramanto",
+    Nama: "KURNIAWAN",
     Image: f4,
-    TheySaid: "One of the most consistent people I’ve worked with — no shortcuts, just solid work.",
+    TheySaid: "Great at building worlds and even better at building friendships.",
   },
   {
-    Nama: "Muhammad Musyofa",
+    Nama: "ALAMAK-TUYUL",
     Image: f5,
-    TheySaid: "He pushes the team forward without making it feel like work — a real motivator.",
+    TheySaid: "Makes every game more fun — always brings the good vibes and epic plays.",
   }
 ];
 
