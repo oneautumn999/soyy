@@ -86,13 +86,13 @@ function Layout({ children }) {
       {!audioStarted && (
         <button
           onClick={handlePlay}
-          className="fixed bottom-6 right-6 z-50 bg-white/80 text-black px-4 py-2 rounded-full shadow-lg"
+          className="fixed bottom-6 right-6 z-50 bg-white/80 text-black px-4 py-2 rounded-full shadow-lg mb-20 md:mb-6"
         >
           Play Music
         </button>
       )}
       {audioStarted && (
-        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-white/80 text-black px-4 py-2 rounded-full shadow-lg">
+        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-white/80 text-black px-4 py-2 rounded-full shadow-lg mb-20 md:mb-6">
           <button onClick={handlePrev}>⏮️</button>
           <button onClick={handlePause}>⏸️</button>
           <button onClick={handlePlay}>▶️</button>
