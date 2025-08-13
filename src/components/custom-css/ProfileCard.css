@@ -1,0 +1,160 @@
+/* ProfileCard.css */
+
+:root {
+  --card-opacity: 0.6;
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+  --pointer-from-left: 0.5;
+  --pointer-from-top: 0.5;
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+}
+
+.pc-card-wrapper {
+  perspective: 500px;
+  transform-style: preserve-3d;
+  touch-action: none;
+}
+
+.pc-card {
+  background-blend-mode: color-dodge;
+  border-radius: 30px;
+  max-height: 540px;
+  aspect-ratio: 0.718;
+  height: 80svh;
+  display: grid;
+  overflow: hidden;
+  position: relative;
+  background-image:
+    radial-gradient(
+      farthest-side circle at var(--pointer-x) var(--pointer-y),
+      hsla(266, 100%, 90%, var(--card-opacity)) 4%,
+      hsla(266, 50%, 80%, calc(var(--card-opacity) * 0.75)) 10%,
+      hsla(266, 25%, 70%, calc(var(--card-opacity) * 0.5)) 50%,
+      hsla(266, 0%, 60%, 0) 100%
+    ),
+    radial-gradient(35% 52% at 55% 20%, #00ffaac4 0%, #073aff00 100%),
+    radial-gradient(100% 100% at 50% 50%, #00c1ffff 1%, #073aff00 76%),
+    conic-gradient(
+      from 124deg at 50% 50%,
+      rgb(75, 25, 25) 0%,
+      rgb(51, 23, 23) 40%,
+      rgb(61, 23, 30) 60%,
+      rgb(63, 18, 18) 100%
+    );
+  background-size: 100% 100%;
+  background-position: 0 0, 0 0, 50% 50%, 0 0;
+  box-shadow:
+    rgba(0, 0, 0, 0.8) calc((var(--pointer-from-left) * 10px) - 3px)
+      calc((var(--pointer-from-top) * 20px) - 6px) 20px -5px;
+  transition: transform 1s ease-in-out;
+  transform-style: preserve-3d;
+  user-select: none;
+}
+
+.pc-card.active {
+  transform: translate3d(0, 0, 0.1px);
+}
+
+.pc-card:hover:not(.active) {
+    transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y));
+  transform-style: preserve-3d;
+  transition: none;
+}
+
+.pc-card-wrapper:hover .pc-card {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+@keyframes glow-bg {
+  0% {
+    background-position: 0 0, 0 0, 50% 50%, 0 0;
+  }
+  100% {
+    background-position: 50% 50%, 25% 10%, 55% 55%, 0 0;
+  }
+}
+
+.animate-glow-bg {
+  animation: glow-bg 5s linear infinite alternate;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .pc-card {
+    height: 70svh;
+    max-height: 450px;
+  }
+  .pc-avatar {
+    max-height: 230px;
+    max-width: 230px;
+  }
+  .pc-text {
+    padding: 20px;
+  }
+  .pc-title {
+    font-size: 1.2rem;
+  }
+  .pc-subtitle {
+    font-size: 0.9rem;
+  }
+  .pc-button {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pc-card {
+    height: 60svh;
+    max-height: 380px;
+  }
+  .pc-avatar {
+    max-height: 180px;
+    max-width: 180px;
+  }
+  .pc-text {
+    padding: 16px;
+  }
+  .pc-title {
+    font-size: 1rem;
+  }
+  .pc-subtitle {
+    font-size: 0.8rem;
+  }
+  .pc-button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .pc-card {
+    height: 55svh;
+    max-height: 320px;
+  }
+  .pc-avatar {
+    max-height: 140px;
+    max-width: 140px;
+  }
+  .pc-text {
+    padding: 12px;
+  }
+  .pc-title {
+    font-size: 0.9rem;
+  }
+  .pc-subtitle {
+    font-size: 0.7rem;
+  }
+  .pc-button {
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.6; }
+}
+
+.status-online-icon {
+  animation: pulse 2s infinite;
+}
